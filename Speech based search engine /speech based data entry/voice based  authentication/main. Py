@@ -1,0 +1,21 @@
+from enroll import enroll_user
+from authenticate import authenticate_user
+
+def menu():
+    while True:
+        print("\n1. Enroll User\n2. Authenticate User\n3. Exit")
+        choice = input("Choose an option: ")
+        if choice == '1':
+            name = input("Enter username: ")
+            enroll_user(name)
+        elif choice == '2':
+            name = input("Enter username: ")
+            authenticate_user(name)
+        elif choice == '3':
+            print("Goodbye.")
+            break
+        else:
+            print("Invalid choice.")
+
+if __name__ == "__main__":
+    menu()
