@@ -1,0 +1,35 @@
+from database.manager import DataManager
+from utils.search import search_record
+from tabulate import tabulate
+
+def main():
+    db = DataManager()
+
+    while True:
+        print("\nOptions:\n1. Search Entry\n2. Add Entry\n3. View All\n4. Exit")
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            key = input("Enter name to search: ")
+            result = search_record(db.data, key)
+            if result:
+                print(tabulate([result], headers="keys"))
+            else:
+                print("Record not found.")
+        elif choice == '2':
+            name = input("Name: ")
+            phone = input("Phone: ")
+            email = input("Email: ")
+            db.add_entry({"name": name, "phone": phone, "email": email})
+            print("Entry added.")
+        elif choice == '3':
+            print(tabulate(db.data, headers="keys"))
+        elif choice == '4':
+            db.save_data()
+            print("Data saved. Goodbye!")
+            break
+        else:
+            print("Invalid choice.")
+
+if __name__ == "__main__":
+    main()
