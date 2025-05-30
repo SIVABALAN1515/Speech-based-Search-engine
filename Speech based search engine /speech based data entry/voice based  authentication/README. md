@@ -1,0 +1,13 @@
+# 🔐 Voice-Based Authentication System
+
+A simple Python project to enroll and authenticate users using their voice passphrase.
+
+## Features
+- Record and save user's voiceprint
+- Authenticate using MFCC + cosine similarity
+- Basic CLI interface
+
+## Setup
+```bash
+pip install -r requirements.txt
+python main.py
