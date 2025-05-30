@@ -1,0 +1,14 @@
+# Search-Based Data Entry System
+
+A simple Python program that allows users to search for and add entries to a local JSON database.
+
+## Features
+- Search by name
+- Add new entries
+- View all entries
+- Data saved to a local file
+
+## Usage
+```bash
+pip install -r requirements.txt
+python main.py
